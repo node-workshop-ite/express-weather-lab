@@ -1,0 +1,11 @@
+<html>
+  <body>
+    <h1>Weather for {country}</h1>
+    {#weather}
+        <ul>
+            <li>{main}</li>
+            <li>{description}</li>
+        </ul>
+    {/weather}
+  </body>
+</html>

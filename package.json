@@ -1,13 +1,16 @@
 {
-	"name": "NodejsStarterApp",
-	"version": "0.0.1",
-	"description": "A sample nodejs app for Bluemix",
-	"scripts": {
-		"start": "node app.js"
-	},
-	"dependencies": {
-		"express": "4.12.x",
-		"cfenv": "1.0.x"
-	},
-	"repository": {}
+  "name": "NodejsStarterApp",
+  "version": "0.0.1",
+  "description": "A sample nodejs app for Bluemix",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "4.12.x",
+    "cfenv": "1.0.x",
+    "adaro": "^1.0.0-9",
+    "weather.js": "0.0.2",
+    "request": "^2.57.0"
+  },
+  "repository": {}
 }
