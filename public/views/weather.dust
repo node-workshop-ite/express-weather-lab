@@ -7,5 +7,12 @@
             <li>{description}</li>
         </ul>
     {/weather}
+    <h2>Temperature</h2>
+    <ul>
+        <li>Temp: {temp} C</li>
+        <li>Max temp: {max_temp} C</li>
+        <li>Min temp: {min_temp} C</li>
+        <li>Humidity: {humidity}%</li>
+    <ul>
   </body>
 </html>

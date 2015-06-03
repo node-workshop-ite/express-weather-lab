@@ -54,6 +54,10 @@ app.get('/weather', function(req, res){
         
         //Populate the view model used to display
         req.model = {};
+        req.model.temp = Math.floor(result.main.temp/10.0),
+        req.model.max_temp = Math.floor(result.main.temp_max/10.0),
+        req.model.min_temp = Math.floor(result.main.temp_min/10.0),
+        req.model.humidity = result.main.humidity,
         req.model.country = result.name,
         req.model.coord = result.coord,
         req.model.weather = result.weather
