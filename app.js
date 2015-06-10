@@ -10,10 +10,6 @@ var express = require('express'),
     adaro = require('adaro'),
     request = require('request');
 
-// cfenv provides access to your Cloud Foundry environment
-// for more info, see: https://www.npmjs.com/package/cfenv
-var cfenv = require('cfenv');
-
 // create a new express server
 var app = express();
 
@@ -37,7 +33,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/home',function(req, res) {
     req.model = {};
-    req.model.name = 'SST';
+    req.model.name = 'ITE';
     
     res.render('index',req.model);
 });
@@ -60,7 +56,8 @@ app.get('/weather', function(req, res){
         req.model.humidity = result.main.humidity,
         req.model.country = result.name,
         req.model.coord = result.coord,
-        req.model.weather = result.weather
+        req.model.wind = result.wind,
+        req.model.weather = result.weather;
         
         
         console.log('req.model: %j',req.model);
@@ -70,11 +67,13 @@ app.get('/weather', function(req, res){
     });
 });
 
-// get the app environment from Cloud Foundry
-var appEnv = cfenv.getAppEnv();
-
 // start server on the specified port and binding host
-app.listen(appEnv.port, function() {
-	// print a message when the server starts listening
-  console.log("server starting on " + appEnv.url);
+var server = app.listen(6001, function () {
+
+  var host = server.address().address;
+  var port = server.address().port;
+
+  console.log('Example app listening at http://%s:%s', host, port);
+
 });
+

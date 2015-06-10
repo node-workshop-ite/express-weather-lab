@@ -13,6 +13,11 @@
         <li>Max temp: {max_temp} C</li>
         <li>Min temp: {min_temp} C</li>
         <li>Humidity: {humidity}%</li>
+    </ul>
+    <h2> Wind Conditions </h2>
     <ul>
+        <li>Speed: {wind.speed} km/hr</li>
+        <li>Direction: {wind.deg} degree</li>
+    </ul>
   </body>
 </html>
