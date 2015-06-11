@@ -13,16 +13,7 @@ var express = require('express'),
 // create a new express server
 var app = express();
 
-var options = {
-  helpers: [
-    //NOTE: function has to take dust as an argument.
-    //The following function defines @myHelper helper
-    function (dust) { dust.helpers.myHelper = function (a, b, c, d) {} },
-    'dustjs-helpers'   //So do installed modules
-  ]
-};
-
-app.engine('dust', adaro.dust(options));
+app.engine('dust', adaro.dust());
 app.set('view engine', 'dust');
 
 app.set('views', __dirname + '/public/views');
